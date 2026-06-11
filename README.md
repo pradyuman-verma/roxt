@@ -224,9 +224,15 @@ cargo test -p roxt-integration
 
 - Integration tests live in [`tests/integration`](tests/integration) and run
   the real `roxt` binary against the MCAP fixtures in
-  [`tests/fixtures`](tests/fixtures).
-- Fixtures are deterministic and regenerable:
+  [`tests/fixtures`](tests/fixtures), including the vendored upstream
+  [MCAP conformance files](tests/fixtures/conformance/README.md).
+- Synthetic fixtures are deterministic and regenerable:
   `cargo test -p roxt-integration --test fixture_gen -- --ignored`.
+- An opt-in smoke test runs against real ROS 2 data
+  ([JKK DATASET_02](https://jkk-research.github.io/dataset/) — research/
+  educational license, never vendored):
+  `ROXT_JKK_MCAP=/path/to/file.mcap cargo test -p roxt-integration --test jkk_smoke -- --ignored`.
+  CI runs it automatically when the `JKK_MCAP_URL` repository variable is set.
 - Library crates use structured `thiserror` errors and `tracing` — no
   `anyhow`, no `println!`, no `.unwrap()` outside tests.
 - Schema changes require updating `docs/schema.md`, the Rust types, and a

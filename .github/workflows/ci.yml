@@ -1,0 +1,84 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  gate:
+    name: fmt + clippy + tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Pinned to the project MSRV (see workspace Cargo.toml comments on
+      # rusqlite/time pins); bump both together.
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: "1.85"
+          components: rustfmt, clippy
+
+      - uses: Swatinem/rust-cache@v2
+
+      - name: cargo fmt --check
+        run: cargo fmt --check
+
+      - name: cargo clippy (deny warnings, pedantic included)
+        run: cargo clippy --all-targets --all-features -- -D warnings
+
+      - name: cargo test --all
+        run: cargo test --all
+
+      - name: integration tests
+        run: cargo test -p roxt-integration
+
+  jkk-smoke:
+    name: real-data smoke (JKK DATASET_02)
+    runs-on: ubuntu-latest
+    needs: gate
+    # Opt-in: runs only when the JKK_MCAP_URL repository variable is set
+    # (Settings → Secrets and variables → Actions → Variables). The JKK
+    # dataset is research/educational-use licensed and is never vendored;
+    # the URL comes from https://jkk-research.github.io/dataset/ and may
+    # need refreshing if SharePoint rotates it.
+    if: ${{ vars.JKK_MCAP_URL != '' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: "1.85"
+
+      - uses: Swatinem/rust-cache@v2
+
+      - name: Cache JKK dataset
+        id: jkk-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/jkk-data
+          key: jkk-ds02-v1
+
+      - name: Download JKK dataset
+        if: steps.jkk-cache.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p ~/jkk-data
+          curl -fL --retry 3 -A "Mozilla/5.0" "$JKK_MCAP_URL" -o ~/jkk-data/jkkds02.zip
+          unzip -o ~/jkk-data/jkkds02.zip -d ~/jkk-data
+          rm ~/jkk-data/jkkds02.zip
+        env:
+          JKK_MCAP_URL: ${{ vars.JKK_MCAP_URL }}
+
+      - name: Run smoke test against real data
+        run: |
+          MCAP_FILE=$(find ~/jkk-data -name '*.mcap' | sort | head -1)
+          if [ -z "$MCAP_FILE" ]; then
+            echo "::error::no .mcap found in downloaded dataset"
+            exit 1
+          fi
+          echo "using $MCAP_FILE"
+          ROXT_JKK_MCAP="$MCAP_FILE" \
+            cargo test -p roxt-integration --test jkk_smoke -- --ignored --nocapture

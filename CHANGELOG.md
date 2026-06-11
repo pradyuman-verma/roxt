@@ -29,3 +29,15 @@ All notable changes to roxt are documented here. Format follows
 - Test suite: unit tests per crate, proptest round-trip and metadata-bound
   properties, and end-to-end integration tests in `tests/integration`
   against MCAP fixtures in `tests/fixtures`.
+- Vendored upstream MCAP conformance fixtures (foxglove/mcap, MIT) with
+  tests pinning `McapSource` behaviour: counts, schemaless channels,
+  attachment/metadata skipping, chunked vs unchunked equivalence.
+- Edge-case fixtures and tests: zstd/lz4/uncompressed variants, robot vs
+  daemon clock skew (recorded, never reconciled), u64 `log_time` overflow
+  → `CorruptPayload`, and pre-epoch rosbag2 timestamps through the full
+  pipeline.
+- Opt-in smoke test against real ROS 2 data (JKK DATASET_02) gated on
+  `ROXT_JKK_MCAP`; never vendored due to research/educational licensing.
+- GitHub Actions CI: fmt/clippy/test gate on every push and PR, plus an
+  optional real-data job that downloads and caches the JKK dataset when
+  the `JKK_MCAP_URL` repository variable is configured.
