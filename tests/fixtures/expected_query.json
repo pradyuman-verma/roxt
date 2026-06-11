@@ -1,0 +1,242 @@
+[
+  {
+    "annotation": null,
+    "ingested_at_ns": 0,
+    "msg_type": "geometry_msgs/msg/Twist",
+    "payload_cdr_hex": "00aa00",
+    "robot_id": "amr-unit-042",
+    "session_id": "session-001",
+    "stamp_ns": 1700000000000000000,
+    "topic": "/cmd_vel"
+  },
+  {
+    "annotation": null,
+    "ingested_at_ns": 0,
+    "msg_type": "nav_msgs/msg/Odometry",
+    "payload_cdr_hex": "01aa01",
+    "robot_id": "amr-unit-042",
+    "session_id": "session-001",
+    "stamp_ns": 1700000000050000000,
+    "topic": "/odom"
+  },
+  {
+    "annotation": null,
+    "ingested_at_ns": 0,
+    "msg_type": "diagnostic_msgs/msg/DiagnosticArray",
+    "payload_cdr_hex": "02aa02",
+    "robot_id": "amr-unit-042",
+    "session_id": "session-001",
+    "stamp_ns": 1700000000100000000,
+    "topic": "/diagnostics"
+  },
+  {
+    "annotation": null,
+    "ingested_at_ns": 0,
+    "msg_type": "geometry_msgs/msg/Twist",
+    "payload_cdr_hex": "03aa00",
+    "robot_id": "amr-unit-042",
+    "session_id": "session-001",
+    "stamp_ns": 1700000000150000000,
+    "topic": "/cmd_vel"
+  },
+  {
+    "annotation": null,
+    "ingested_at_ns": 0,
+    "msg_type": "nav_msgs/msg/Odometry",
+    "payload_cdr_hex": "04aa01",
+    "robot_id": "amr-unit-042",
+    "session_id": "session-001",
+    "stamp_ns": 1700000000200000000,
+    "topic": "/odom"
+  },
+  {
+    "annotation": null,
+    "ingested_at_ns": 0,
+    "msg_type": "diagnostic_msgs/msg/DiagnosticArray",
+    "payload_cdr_hex": "05aa02",
+    "robot_id": "amr-unit-042",
+    "session_id": "session-001",
+    "stamp_ns": 1700000000250000000,
+    "topic": "/diagnostics"
+  },
+  {
+    "annotation": null,
+    "ingested_at_ns": 0,
+    "msg_type": "geometry_msgs/msg/Twist",
+    "payload_cdr_hex": "06aa00",
+    "robot_id": "amr-unit-042",
+    "session_id": "session-001",
+    "stamp_ns": 1700000000300000000,
+    "topic": "/cmd_vel"
+  },
+  {
+    "annotation": null,
+    "ingested_at_ns": 0,
+    "msg_type": "nav_msgs/msg/Odometry",
+    "payload_cdr_hex": "07aa01",
+    "robot_id": "amr-unit-042",
+    "session_id": "session-001",
+    "stamp_ns": 1700000000350000000,
+    "topic": "/odom"
+  },
+  {
+    "annotation": null,
+    "ingested_at_ns": 0,
+    "msg_type": "diagnostic_msgs/msg/DiagnosticArray",
+    "payload_cdr_hex": "08aa02",
+    "robot_id": "amr-unit-042",
+    "session_id": "session-001",
+    "stamp_ns": 1700000000400000000,
+    "topic": "/diagnostics"
+  },
+  {
+    "annotation": null,
+    "ingested_at_ns": 0,
+    "msg_type": "geometry_msgs/msg/Twist",
+    "payload_cdr_hex": "09aa00",
+    "robot_id": "amr-unit-042",
+    "session_id": "session-001",
+    "stamp_ns": 1700000000450000000,
+    "topic": "/cmd_vel"
+  },
+  {
+    "annotation": null,
+    "ingested_at_ns": 0,
+    "msg_type": "nav_msgs/msg/Odometry",
+    "payload_cdr_hex": "0aaa01",
+    "robot_id": "amr-unit-042",
+    "session_id": "session-001",
+    "stamp_ns": 1700000000500000000,
+    "topic": "/odom"
+  },
+  {
+    "annotation": null,
+    "ingested_at_ns": 0,
+    "msg_type": "diagnostic_msgs/msg/DiagnosticArray",
+    "payload_cdr_hex": "0baa02",
+    "robot_id": "amr-unit-042",
+    "session_id": "session-001",
+    "stamp_ns": 1700000000550000000,
+    "topic": "/diagnostics"
+  },
+  {
+    "annotation": null,
+    "ingested_at_ns": 0,
+    "msg_type": "geometry_msgs/msg/Twist",
+    "payload_cdr_hex": "0caa00",
+    "robot_id": "amr-unit-042",
+    "session_id": "session-001",
+    "stamp_ns": 1700000000600000000,
+    "topic": "/cmd_vel"
+  },
+  {
+    "annotation": null,
+    "ingested_at_ns": 0,
+    "msg_type": "nav_msgs/msg/Odometry",
+    "payload_cdr_hex": "0daa01",
+    "robot_id": "amr-unit-042",
+    "session_id": "session-001",
+    "stamp_ns": 1700000000650000000,
+    "topic": "/odom"
+  },
+  {
+    "annotation": null,
+    "ingested_at_ns": 0,
+    "msg_type": "diagnostic_msgs/msg/DiagnosticArray",
+    "payload_cdr_hex": "0eaa02",
+    "robot_id": "amr-unit-042",
+    "session_id": "session-001",
+    "stamp_ns": 1700000000700000000,
+    "topic": "/diagnostics"
+  },
+  {
+    "annotation": null,
+    "ingested_at_ns": 0,
+    "msg_type": "geometry_msgs/msg/Twist",
+    "payload_cdr_hex": "0faa00",
+    "robot_id": "amr-unit-042",
+    "session_id": "session-001",
+    "stamp_ns": 1700000000750000000,
+    "topic": "/cmd_vel"
+  },
+  {
+    "annotation": null,
+    "ingested_at_ns": 0,
+    "msg_type": "nav_msgs/msg/Odometry",
+    "payload_cdr_hex": "10aa01",
+    "robot_id": "amr-unit-042",
+    "session_id": "session-001",
+    "stamp_ns": 1700000000800000000,
+    "topic": "/odom"
+  },
+  {
+    "annotation": null,
+    "ingested_at_ns": 0,
+    "msg_type": "diagnostic_msgs/msg/DiagnosticArray",
+    "payload_cdr_hex": "11aa02",
+    "robot_id": "amr-unit-042",
+    "session_id": "session-001",
+    "stamp_ns": 1700000000850000000,
+    "topic": "/diagnostics"
+  },
+  {
+    "annotation": null,
+    "ingested_at_ns": 0,
+    "msg_type": "geometry_msgs/msg/Twist",
+    "payload_cdr_hex": "12aa00",
+    "robot_id": "amr-unit-042",
+    "session_id": "session-001",
+    "stamp_ns": 1700000000900000000,
+    "topic": "/cmd_vel"
+  },
+  {
+    "annotation": null,
+    "ingested_at_ns": 0,
+    "msg_type": "nav_msgs/msg/Odometry",
+    "payload_cdr_hex": "13aa01",
+    "robot_id": "amr-unit-042",
+    "session_id": "session-001",
+    "stamp_ns": 1700000000950000000,
+    "topic": "/odom"
+  },
+  {
+    "annotation": null,
+    "ingested_at_ns": 0,
+    "msg_type": "diagnostic_msgs/msg/DiagnosticArray",
+    "payload_cdr_hex": "14aa02",
+    "robot_id": "amr-unit-042",
+    "session_id": "session-001",
+    "stamp_ns": 1700000001000000000,
+    "topic": "/diagnostics"
+  },
+  {
+    "annotation": null,
+    "ingested_at_ns": 0,
+    "msg_type": "geometry_msgs/msg/Twist",
+    "payload_cdr_hex": "15aa00",
+    "robot_id": "amr-unit-042",
+    "session_id": "session-001",
+    "stamp_ns": 1700000001050000000,
+    "topic": "/cmd_vel"
+  },
+  {
+    "annotation": null,
+    "ingested_at_ns": 0,
+    "msg_type": "nav_msgs/msg/Odometry",
+    "payload_cdr_hex": "16aa01",
+    "robot_id": "amr-unit-042",
+    "session_id": "session-001",
+    "stamp_ns": 1700000001100000000,
+    "topic": "/odom"
+  },
+  {
+    "annotation": null,
+    "ingested_at_ns": 0,
+    "msg_type": "diagnostic_msgs/msg/DiagnosticArray",
+    "payload_cdr_hex": "17aa02",
+    "robot_id": "amr-unit-042",
+    "session_id": "session-001",
+    "stamp_ns": 1700000001150000000,
+    "topic": "/diagnostics"
+  }
+]

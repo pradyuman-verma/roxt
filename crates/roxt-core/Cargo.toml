@@ -1,0 +1,17 @@
+[package]
+name = "roxt-core"
+description = "Schema types, error types, and shared traits for the roxt telemetry recorder"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+rusqlite.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+
+[lints]
+workspace = true

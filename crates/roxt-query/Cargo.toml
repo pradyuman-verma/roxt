@@ -1,0 +1,18 @@
+[package]
+name = "roxt-query"
+description = "Query engine over roxt-stored telemetry events"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+roxt-core.workspace = true
+roxt-store.workspace = true
+rusqlite.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
+
+[lints]
+workspace = true

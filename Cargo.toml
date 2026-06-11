@@ -1,0 +1,46 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/roxt-core",
+    "crates/roxt-ingest",
+    "crates/roxt-store",
+    "crates/roxt-query",
+    "crates/roxt-cli",
+    "tests/integration",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+repository = "https://github.com/pradyuman-verma/roxt"
+
+[workspace.dependencies]
+roxt-core = { path = "crates/roxt-core" }
+roxt-ingest = { path = "crates/roxt-ingest" }
+roxt-store = { path = "crates/roxt-store" }
+roxt-query = { path = "crates/roxt-query" }
+
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+mcap = "0.25"
+memmap2 = "0.9"
+proptest = "1"
+# 0.34 is the newest rusqlite whose bundled libsqlite3-sys builds on the
+# project MSRV (rustc 1.85); bump together with a toolchain bump.
+rusqlite = { version = "0.34", features = ["bundled"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_yaml = "0.9"
+tempfile = "3"
+thiserror = "2"
+time = { version = "0.3", features = ["parsing", "formatting", "macros"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[workspace.lints.rust]
+warnings = "deny"
+
+[workspace.lints.clippy]
+all = { level = "deny", priority = -1 }
+pedantic = { level = "warn", priority = -1 }

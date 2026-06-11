@@ -1,0 +1,20 @@
+[package]
+name = "roxt-store"
+description = "SQLite event storage for roxt (Parquet export planned)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+roxt-core.workspace = true
+rusqlite.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+tempfile.workspace = true
+
+[lints]
+workspace = true

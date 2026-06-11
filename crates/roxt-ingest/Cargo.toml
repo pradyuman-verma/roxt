@@ -1,0 +1,27 @@
+[package]
+name = "roxt-ingest"
+description = "Telemetry ingestion sources (MCAP, rosbag2, future zenoh) for roxt"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[features]
+# FUTURE(v2): enables the live Zenoh session source. The stub compiles
+# without the zenoh crate; the real dependency lands with v2.
+zenoh = []
+
+[dependencies]
+roxt-core.workspace = true
+mcap.workspace = true
+memmap2.workspace = true
+rusqlite.workspace = true
+serde.workspace = true
+serde_yaml.workspace = true
+tracing.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
+
+[lints]
+workspace = true

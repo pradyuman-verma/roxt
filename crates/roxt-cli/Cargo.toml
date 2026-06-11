@@ -1,0 +1,27 @@
+[package]
+name = "roxt-cli"
+description = "roxt command-line interface: rec, query, replay, diff"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[[bin]]
+name = "roxt"
+path = "src/main.rs"
+
+[dependencies]
+roxt-core.workspace = true
+roxt-ingest.workspace = true
+roxt-store.workspace = true
+roxt-query.workspace = true
+
+anyhow.workspace = true
+clap.workspace = true
+serde_json.workspace = true
+time.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+
+[lints]
+workspace = true
