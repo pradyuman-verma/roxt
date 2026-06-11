@@ -1,7 +1,8 @@
 //! Edge-case coverage the conformance files and happy-path fixtures miss:
-//! compression variants, robot/daemon clock skew, u64 log_time overflow,
-//! and pre-epoch timestamps (only representable via rosbag2 — MCAP's
-//! log_time is unsigned, which is exactly why the schema uses i64).
+//! compression variants, robot/daemon clock skew, `u64` `log_time`
+//! overflow, and pre-epoch timestamps (only representable via rosbag2 —
+//! MCAP's `log_time` is unsigned, which is exactly why the schema uses
+//! `i64`).
 
 use std::path::{Path, PathBuf};
 
@@ -87,8 +88,7 @@ fn pre_epoch_rosbag2_timestamps_survive_the_full_pipeline() {
     let db = dir.path().join("events.db");
     let mut store = roxt_store::SqliteStore::open(&db).expect("open store");
     store.insert_events(&events).expect("insert");
-    let stored =
-        roxt_query::query_events(&db, &roxt_query::QueryFilter::default()).expect("query");
+    let stored = roxt_query::query_events(&db, &roxt_query::QueryFilter::default()).expect("query");
     let stamps: Vec<i64> = stored.iter().map(|s| s.event.stamp_ns).collect();
     assert_eq!(stamps, vec![-1_000_000_000, -500_000_000, 0]);
 }

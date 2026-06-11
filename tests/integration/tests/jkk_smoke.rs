@@ -1,5 +1,5 @@
 //! Opt-in smoke test against real ROS 2 MCAP data (JKK Research Center
-//! DATASET_02, https://jkk-research.github.io/dataset/).
+//! `DATASET_02`, <https://jkk-research.github.io/dataset/>).
 //!
 //! The dataset is licensed for research/educational use without a
 //! redistribution grant, so it is never vendored into this repository.

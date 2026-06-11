@@ -34,8 +34,8 @@ const SAMPLE_MESSAGE_COUNT: u64 = 24;
 /// Messages in each compression-variant fixture.
 const COMPRESSION_MESSAGE_COUNT: u64 = 12;
 
-/// Stamp used by clock_skew.mcap: 2001-03-09T09:46:40Z, decades away from
-/// any plausible ingest wall clock.
+/// Stamp used by `clock_skew.mcap`: 2001-03-09T09:46:40Z, decades away
+/// from any plausible ingest wall clock.
 const SKEWED_STAMP_NS: u64 = 984_130_000_000_000_000;
 
 #[test]
@@ -132,8 +132,9 @@ fn write_clock_skew(path: &Path) {
     writer.finish().expect("finish");
 }
 
-/// A log_time that cannot fit the schema's i64 stamp. MCAP allows it
-/// (log_time is u64); roxt must surface CorruptPayload, not wrap silently.
+/// A `log_time` that cannot fit the schema's `i64` stamp. MCAP allows it
+/// (`log_time` is `u64`); roxt must surface `CorruptPayload`, not wrap
+/// silently.
 fn write_overflow(path: &Path) {
     let file = BufWriter::new(File::create(path).expect("create overflow.mcap"));
     let mut writer = Writer::new(file).expect("writer");
